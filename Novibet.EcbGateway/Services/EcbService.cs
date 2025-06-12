@@ -17,7 +17,6 @@ namespace Novibet.EcbGateway.Services
         {
             _httpClient = httpClient;
             _ecbUrl = configuration["EcbGateway:BaseUrl"];
-            // Console.WriteLine($"ECB Base URL: {_ecbUrl}");
         }
 
         public async Task<List<CurrencyRate>> GetLatestRatesAsync()
@@ -32,14 +31,20 @@ namespace Novibet.EcbGateway.Services
             var currencyRates = new List<CurrencyRate>();
             var document = XDocument.Parse(xmlData);
             var namespaces = document.Root.GetDefaultNamespace();
-            var cubes = document.Descendants(namespaces + "Cube").Where(c => c.Attribute("currency") != null);
             
+             //we found the date in xml
+            var dateAttribute = document.Descendants(namespaces + "Cube")
+                                .FirstOrDefault(c => c.Attribute("time") != null)?
+                                .Attribute("time")?.Value;
+            DateTime.TryParse(dateAttribute, out DateTime parsedDate);
+
+            var cubes = document.Descendants(namespaces + "Cube").Where(c => c.Attribute("currency") != null);
+
             foreach (var cube in cubes)
             {
                 var currencyCode = cube.Attribute("currency")?.Value;
                 var rate = decimal.TryParse(cube.Attribute("rate")?.Value, out var parsedRate) ? parsedRate : 0;
-                
-                currencyRates.Add(new CurrencyRate { CurrencyCode = currencyCode, Rate = rate });
+                currencyRates.Add(new CurrencyRate { CurrencyCode = currencyCode, Rate = rate, Date = parsedDate });
             }
 
             return currencyRates;

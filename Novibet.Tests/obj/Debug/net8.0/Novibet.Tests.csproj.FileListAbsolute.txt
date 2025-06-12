@@ -91,6 +91,7 @@ C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibe
 C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibet.Tests.AssemblyInfoInputs.cache
 C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibet.Tests.AssemblyInfo.cs
 C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibet.Tests.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibet.Tests.sourcelink.json
 C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibet..04D0C9E0.Up2Date
 C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\Novibet.Tests.dll
 C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Tests\obj\Debug\net8.0\refint\Novibet.Tests.dll
