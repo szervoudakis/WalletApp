@@ -1,0 +1,12 @@
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\bin\Debug\net8.0\Novibet.EcbGateway.deps.json
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\bin\Debug\net8.0\Novibet.EcbGateway.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\bin\Debug\net8.0\Novibet.EcbGateway.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.csproj.AssemblyReference.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.AssemblyInfoInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.AssemblyInfo.cs
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\refint\Novibet.EcbGateway.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\Novibet.EcbGateway.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.EcbGateway\obj\Debug\net8.0\ref\Novibet.EcbGateway.dll

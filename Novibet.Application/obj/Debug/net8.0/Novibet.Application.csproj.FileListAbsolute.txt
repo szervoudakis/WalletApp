@@ -1,0 +1,12 @@
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\bin\Debug\net8.0\Novibet.Application.deps.json
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\bin\Debug\net8.0\Novibet.Application.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\bin\Debug\net8.0\Novibet.Application.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.csproj.AssemblyReference.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.AssemblyInfoInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.AssemblyInfo.cs
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\refint\Novibet.Application.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\Novibet.Application.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Application\obj\Debug\net8.0\ref\Novibet.Application.dll
