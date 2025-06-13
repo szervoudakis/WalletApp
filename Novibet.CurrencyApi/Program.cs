@@ -18,7 +18,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<NovibetDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("NovibetDb")));  //add dbcontext
 
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 //using autofac as DI container
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Novibet.Domain.Entities;
+using EFCore.BulkExtensions;
 
 namespace Novibet.Infrastructure.Data
 {
@@ -8,6 +9,6 @@ namespace Novibet.Infrastructure.Data
         public NovibetDbContext(DbContextOptions<NovibetDbContext> options) : base(options) { }
 
         public DbSet<Currency> Currencies { get; set; }
-        
+
     }
 }

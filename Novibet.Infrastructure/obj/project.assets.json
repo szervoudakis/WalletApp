@@ -47,6 +47,9 @@
           }
         }
       },
+      "EFCore.BulkExtensions/9.0.1": {
+        "type": "package"
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1773,6 +1776,20 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "EFCore.BulkExtensions/9.0.1": {
+      "sha512": "exOdMFHAFTzE19ux2Kyhqv+vWsyUYrdYC5euxaLOzQ3Mukm3sRdXiXyYuLoJknTxJoM86rVHYvXZD9HFPcZTBQ==",
+      "type": "package",
+      "path": "efcore.bulkextensions/9.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EFCoreBulk.png",
+        "LICENSE.txt",
+        "README.md",
+        "efcore.bulkextensions.9.0.1.nupkg.sha512",
+        "efcore.bulkextensions.nuspec"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -5023,6 +5040,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "EFCore.BulkExtensions >= 9.0.1",
       "Microsoft.EntityFrameworkCore >= 9.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.6",
@@ -5078,6 +5096,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "EFCore.BulkExtensions": {
+            "target": "Package",
+            "version": "[9.0.1, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.6, )"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Novibet.EcbGateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0fc8d87987af8b934379898ec2a6cdb3ef20937")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb71bc37b7acd5b5fd8569258cc565218b0e5b7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Novibet.EcbGateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Novibet.EcbGateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

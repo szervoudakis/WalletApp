@@ -2,6 +2,7 @@ using Autofac;
 using AutoMapper;
 using Novibet.CurrencyApi.Mapping;
 using Novibet.Infrastructure.Repositories;
+using Novibet.Infrastructure.Data;
 namespace Novibet.CurrencyApi.DependencyInjection
 {
     public class CurrencyApiModule : Module
@@ -19,6 +20,9 @@ namespace Novibet.CurrencyApi.DependencyInjection
 
             //register currencyrepository in DI Container
             builder.RegisterType<CurrencyRepository>().AsSelf().InstancePerLifetimeScope();
+            //register novibetDbContext in DI
+            builder.RegisterType<NovibetDbContext>().AsSelf().InstancePerLifetimeScope();
+
         }
     }
 }
