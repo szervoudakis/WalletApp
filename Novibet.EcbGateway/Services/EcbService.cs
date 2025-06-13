@@ -1,10 +1,12 @@
+
 using Microsoft.Extensions.Configuration;
 using System.Xml.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Novibet.EcbGateway.Models;
-
+using Novibet.Infrastructure.Repositories;
+using Novibet.Domain.Entities;
 
 namespace Novibet.EcbGateway.Services
 {
@@ -13,16 +15,21 @@ namespace Novibet.EcbGateway.Services
         private readonly HttpClient _httpClient;
         private readonly string _ecbUrl;
 
-        public EcbService(HttpClient httpClient, IConfiguration configuration)
+        private readonly CurrencyRepository _currencyRepository;
+
+        public EcbService(HttpClient httpClient, IConfiguration configuration, CurrencyRepository currencyRepository)
         {
             _httpClient = httpClient;
+            _currencyRepository = currencyRepository;
             _ecbUrl = configuration["EcbGateway:BaseUrl"];
         }
 
         public async Task<List<CurrencyRate>> GetLatestRatesAsync()
         {
             var response = await _httpClient.GetStringAsync(_ecbUrl);
-            return ParseXml(response);
+            var rates = ParseXml(response);
+
+            return rates;
         }
 
         
@@ -32,7 +39,7 @@ namespace Novibet.EcbGateway.Services
             var document = XDocument.Parse(xmlData);
             var namespaces = document.Root.GetDefaultNamespace();
             
-             //we found the date in xml
+            //we found the date in xml
             var dateAttribute = document.Descendants(namespaces + "Cube")
                                 .FirstOrDefault(c => c.Attribute("time") != null)?
                                 .Attribute("time")?.Value;

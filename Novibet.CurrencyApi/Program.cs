@@ -11,6 +11,7 @@ using Autofac.Extensions.DependencyInjection;
 using Novibet.EcbGateway.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Novibet.Infrastructure.Data;
+using Novibet.CurrencyApi.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,8 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
-    containerBuilder.RegisterModule(new EcbGatewayModule(builder.Configuration));  // using module for injection
+    containerBuilder.RegisterModule(new EcbGatewayModule(builder.Configuration));  // using ecbgatewaymodule for injection
+    containerBuilder.RegisterModule(new CurrencyApiModule());  //using currencyapimodule for injection
 });
 
 builder.Services.AddControllers();//add controllers

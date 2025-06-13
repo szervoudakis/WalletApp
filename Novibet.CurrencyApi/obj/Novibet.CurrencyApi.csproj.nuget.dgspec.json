@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[10.0.0, )"
@@ -173,7 +177,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Infrastructure\\Novibet.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Infrastructure\\Novibet.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
