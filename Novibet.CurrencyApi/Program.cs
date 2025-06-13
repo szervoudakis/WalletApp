@@ -6,14 +6,27 @@ using System.Linq;
 using Novibet.EcbGateway.Models;
 using Novibet.EcbGateway.Services;
 using Autofac;
+using Hangfire;
+using Hangfire.SqlServer;
 using Microsoft.Extensions.Configuration;
 using Autofac.Extensions.DependencyInjection;
 using Novibet.EcbGateway.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Novibet.Infrastructure.Data;
 using Novibet.CurrencyApi.DependencyInjection;
+using Novibet.CurrencyApi.Jobs;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHangfire(config => 
+    config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+          .UseSimpleAssemblyNameTypeSerializer()
+          .UseRecommendedSerializerSettings()
+          .UseSqlServerStorage(builder.Configuration.GetConnectionString("NovibetDb")));
+builder.Services.AddHangfireServer();
+
+
+
 
 builder.Services.AddDbContext<NovibetDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("NovibetDb")));  //add dbcontext
@@ -29,7 +42,13 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 builder.Services.AddControllers();//add controllers
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);  //add configuration to builder services
 
+
 var app = builder.Build();
 
 app.MapControllers();
+app.UseHangfireDashboard();
+RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
+    "update-currency-rates",
+    job => job.Execute(),
+    Cron.Minutely);
 app.Run();

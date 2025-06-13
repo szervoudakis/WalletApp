@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Novibet.CurrencyApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb71bc37b7acd5b5fd8569258cc565218b0e5b7b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e39f834ed67506acdb1924fd150c95f6ccdbbbe5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Novibet.CurrencyApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Novibet.CurrencyApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

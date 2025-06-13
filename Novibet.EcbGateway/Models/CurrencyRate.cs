@@ -2,7 +2,7 @@ namespace Novibet.EcbGateway.Models
 {
     public class CurrencyRate
     {
-        public string CurrencyCode { get; set; }
+        public required string CurrencyCode { get; set; }
         public decimal Rate { get; set; }
         public DateTime Date { get; set; } 
     }

@@ -10,7 +10,17 @@ namespace Novibet.Infrastructure.Data
     {
         public NovibetDbContext CreateDbContext(string[] args)
         {
-            var basePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "Novibet.CurrencyApi");
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var parentDirectory = Directory.GetParent(currentDirectory);
+
+            //checking id parentdirectory exist
+            if (parentDirectory == null)
+            {
+                throw new InvalidOperationException("Parent directory not found.");
+            }
+                
+            var basePath = Path.Combine(parentDirectory.FullName, "Novibet.CurrencyApi");
+
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)
                 .AddJsonFile("appsettings.json",optional:false,reloadOnChange:true)

@@ -13,7 +13,7 @@ namespace Novibet.EcbGateway.Services
     public class EcbService : IEcbService
     {   
         private readonly HttpClient _httpClient;
-        private readonly string _ecbUrl;
+        private readonly string? _ecbUrl;
 
         private readonly CurrencyRepository _currencyRepository;
 
@@ -21,7 +21,7 @@ namespace Novibet.EcbGateway.Services
         {
             _httpClient = httpClient;
             _currencyRepository = currencyRepository;
-            _ecbUrl = configuration["EcbGateway:BaseUrl"];
+            _ecbUrl = configuration["EcbGateway:BaseUrl"] ?? throw new ArgumentNullException(nameof(configuration), "ECB URL cannot be null");
         }
 
         public async Task<List<CurrencyRate>> GetLatestRatesAsync()
@@ -32,29 +32,42 @@ namespace Novibet.EcbGateway.Services
             return rates;
         }
 
-        
         private List<CurrencyRate> ParseXml(string xmlData)
         {
             var currencyRates = new List<CurrencyRate>();
             var document = XDocument.Parse(xmlData);
-            var namespaces = document.Root.GetDefaultNamespace();
-            
-            //we found the date in xml
+            var namespaces = document.Root?.GetDefaultNamespace() ?? XNamespace.None; 
+
+            // Attempt to extract date
             var dateAttribute = document.Descendants(namespaces + "Cube")
                                 .FirstOrDefault(c => c.Attribute("time") != null)?
                                 .Attribute("time")?.Value;
-            DateTime.TryParse(dateAttribute, out DateTime parsedDate);
 
-            var cubes = document.Descendants(namespaces + "Cube").Where(c => c.Attribute("currency") != null);
+            // Try parse date safely
+            var dateParsedSuccessfully = DateTime.TryParse(dateAttribute, out DateTime parsedDate);
+
+            var cubes = document.Descendants(namespaces + "Cube")
+                                .Where(c => c.Attribute("currency") != null && c.Attribute("rate") != null);
 
             foreach (var cube in cubes)
             {
                 var currencyCode = cube.Attribute("currency")?.Value;
-                var rate = decimal.TryParse(cube.Attribute("rate")?.Value, out var parsedRate) ? parsedRate : 0;
-                currencyRates.Add(new CurrencyRate { CurrencyCode = currencyCode, Rate = rate, Date = parsedDate });
+                var rateParsed = decimal.TryParse(cube.Attribute("rate")?.Value, out var parsedRate);
+
+                // Safeguard against nulls and parse errors
+                if (!string.IsNullOrEmpty(currencyCode) && rateParsed && dateParsedSuccessfully)
+                {
+                    currencyRates.Add(new CurrencyRate
+                    {
+                        CurrencyCode = currencyCode,
+                        Rate = parsedRate,
+                        Date = parsedDate
+                    });
+                }
             }
 
             return currencyRates;
         }
-    }
+
+     }
 }
