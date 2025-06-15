@@ -1,8 +1,8 @@
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Novibet.EcbGateway.Services;
 using Novibet.Domain.Entities;
 using Novibet.Infrastructure.Repositories;
+using Novibet.CurrencyApi.Services;
 
 namespace Novibet.CurrencyApi.Controllers
 {
@@ -11,25 +11,18 @@ namespace Novibet.CurrencyApi.Controllers
     public class EcbController : ControllerBase
     {
         private readonly IEcbService _ecbService;
-        private readonly IMapper _mapper;
-
-        private readonly CurrencyRepository _currencyRepository;
-        public EcbController(IEcbService ecbService, IMapper mapper, CurrencyRepository currencyRepository)
+        private readonly CurrencyService _currencyService;
+        public EcbController(IEcbService ecbService, CurrencyRepository currencyRepository, CurrencyService currencyService)
         {
-            _mapper = mapper;
             _ecbService = ecbService;
-            _currencyRepository = currencyRepository;
+            _currencyService = currencyService;
         }
         
         [HttpGet("rates")]
         public async Task<IActionResult> GetRates()
         {
-            var rates = await _ecbService.GetLatestRatesAsync();
-            var currencies = _mapper.Map<List<Currency>>(rates);
-
-            await _currencyRepository.SaveCurrencyRatesAsync(currencies);
-            
-            return Ok(currencies);
+            var rates = await _currencyService.GetCurrencyRatesAsync();
+            return Ok(rates);
         }
     }
 }

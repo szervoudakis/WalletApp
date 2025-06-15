@@ -11,7 +11,6 @@ namespace Novibet.CurrencyApi.Jobs
     {
         private readonly IEcbService _ecbService;
         private readonly CurrencyRepository _currencyRepository;
-
         private readonly CurrencyService _currencyService;
 
         public UpdateCurrencyRatesJob(IEcbService ecbService, CurrencyRepository currencyRepository, CurrencyService currencyService)

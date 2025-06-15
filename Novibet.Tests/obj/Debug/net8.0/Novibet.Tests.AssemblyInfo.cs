@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Novibet.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e39f834ed67506acdb1924fd150c95f6ccdbbbe5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ece7066a0d0c340ed598d944c74f6d4ac7ff7974")]
 [assembly: System.Reflection.AssemblyProductAttribute("Novibet.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Novibet.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -34,12 +34,15 @@ namespace Novibet.CurrencyApi.DependencyInjection
             .AsSelf()
             .SingleInstance();
 
-
             //6) register updatecurrencyratesjob in DI Container
             builder.RegisterType<UpdateCurrencyRatesJob>().AsSelf().InstancePerLifetimeScope();
 
             //7) register currencyservice in DI Container
             builder.RegisterType<CurrencyService>().AsSelf().InstancePerLifetimeScope();
+
+            //8) register CurrencyCacheService in DI Container
+            builder.RegisterType<CurrencyCacheService>().AsSelf().SingleInstance();
+
 
         }
     }

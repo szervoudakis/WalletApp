@@ -15,6 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using Novibet.Infrastructure.Data;
 using Novibet.CurrencyApi.DependencyInjection;
 using Novibet.CurrencyApi.Jobs;
+using StackExchange.Redis;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,8 +49,9 @@ var app = builder.Build();
 
 app.MapControllers();
 app.UseHangfireDashboard();
-RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
-    "update-currency-rates",
-    job => job.Execute(),
-    Cron.Minutely);
+// RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
+//     "update-currency-rates",
+//     job => job.Execute(),
+//     Cron.Minutely);
+
 app.Run();
