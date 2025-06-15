@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Novibet.Domain\Novibet.Domain.csproj" />
+    <ProjectReference Include="..\Novibet.Application\Novibet.Application.csproj" />
   </ItemGroup>
 
 </Project>

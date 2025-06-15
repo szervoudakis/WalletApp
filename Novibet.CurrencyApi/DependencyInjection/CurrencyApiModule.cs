@@ -7,6 +7,7 @@ using Novibet.Infrastructure.Repositories;
 using Novibet.Infrastructure.Data;
 using Novibet.CurrencyApi.Jobs;
 using Novibet.CurrencyApi.Services;
+using Novibet.Application.Interfaces;
 
 namespace Novibet.CurrencyApi.DependencyInjection
 {
@@ -17,7 +18,7 @@ namespace Novibet.CurrencyApi.DependencyInjection
             // 1) register AutoMapper to Autofac
             builder.Register(c => new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile(new CurrencyMappingProfile());
+               cfg.AddProfile(new CurrencyMappingProfile());
             }).CreateMapper()).As<IMapper>().SingleInstance();
 
             //2) register CurrencyMapper in DI Container
@@ -43,6 +44,8 @@ namespace Novibet.CurrencyApi.DependencyInjection
             //8) register CurrencyCacheService in DI Container
             builder.RegisterType<CurrencyCacheService>().AsSelf().SingleInstance();
 
+            //9) register WalletRepository in DI Container
+            builder.RegisterType<WalletRepository>().As<IWalletRepository>().InstancePerLifetimeScope();
 
         }
     }

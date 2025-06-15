@@ -36,7 +36,6 @@ namespace Novibet.CurrencyApi.Services
             var cachedRates = await _currencyCacheService.GetCachedCurrencyRatesAsync();
             if (cachedRates != null && cachedRates.Count > 0)
             {
-                Console.WriteLine("exei cached data"); 
                 return cachedRates;
             }
 

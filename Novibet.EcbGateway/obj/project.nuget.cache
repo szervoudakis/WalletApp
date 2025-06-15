@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UwYNv3jM7Uc=",
+  "dgSpecHash": "CAH8Q0OmX/s=",
   "success": true,
   "projectFilePath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.EcbGateway\\Novibet.EcbGateway.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\steze\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\efcore.bulkextensions\\8.0.2\\efcore.bulkextensions.8.0.2.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\medalliontopologicalsort\\1.0.0\\medalliontopologicalsort.1.0.0.nupkg.sha512",
+    "C:\\Users\\steze\\.nuget\\packages\\mediatr\\12.5.0\\mediatr.12.5.0.nupkg.sha512",
+    "C:\\Users\\steze\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\microsoft.bcl.cryptography\\8.0.0\\microsoft.bcl.cryptography.8.0.0.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\microsoft.data.sqlclient\\6.0.2\\microsoft.data.sqlclient.6.0.2.nupkg.sha512",

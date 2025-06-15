@@ -14,6 +14,7 @@ using Novibet.EcbGateway.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Novibet.Infrastructure.Data;
 using Novibet.CurrencyApi.DependencyInjection;
+using Novibet.Application.DependencyInjection;
 using Novibet.CurrencyApi.Jobs;
 using StackExchange.Redis;
 
@@ -39,6 +40,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new EcbGatewayModule(builder.Configuration));  // using ecbgatewaymodule for injection
     containerBuilder.RegisterModule(new CurrencyApiModule());  //using currencyapimodule for injection
+    containerBuilder.RegisterModule(new ApplicationModule()); //using applicationmodule for injection
 });
 
 builder.Services.AddControllers();//add controllers

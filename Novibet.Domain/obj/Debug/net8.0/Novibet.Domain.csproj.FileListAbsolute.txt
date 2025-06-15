@@ -1,0 +1,12 @@
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\bin\Debug\net8.0\Novibet.Domain.deps.json
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\bin\Debug\net8.0\Novibet.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\bin\Debug\net8.0\Novibet.Domain.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.AssemblyInfoInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.AssemblyInfo.cs
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.sourcelink.json
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\refint\Novibet.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\Novibet.Domain.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\Novibet.Domain\obj\Debug\net8.0\ref\Novibet.Domain.dll
