@@ -17,6 +17,9 @@ using Novibet.CurrencyApi.DependencyInjection;
 using Novibet.Application.DependencyInjection;
 using Novibet.CurrencyApi.Jobs;
 using StackExchange.Redis;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,9 +49,26 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 builder.Services.AddControllers();//add controllers
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);  //add configuration to builder services
 
+var jwtsecret = builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is missing in configuration.");
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtsecret))
+        };
+    });
 
 var app = builder.Build();
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.UseHangfireDashboard();
 // RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(

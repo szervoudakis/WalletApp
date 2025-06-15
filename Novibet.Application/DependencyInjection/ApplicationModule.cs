@@ -11,15 +11,13 @@ namespace Novibet.Application.DependencyInjection
     {
         protected override void Load(ContainerBuilder builder)
         {
-            // register mediator and CQRS handlers
+            // register mediator and CQRS handlers in DI container
             builder.RegisterType<Mediator>().As<IMediator>().InstancePerLifetimeScope();
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                    .AsClosedTypesOf(typeof(IRequestHandler<,>))
                    .InstancePerLifetimeScope();
-                   
-            //  builder.RegisterType<WalletRepository>().As<IWalletRepository>().InstancePerLifetimeScope();      
-
+                         
         }
     }
 }

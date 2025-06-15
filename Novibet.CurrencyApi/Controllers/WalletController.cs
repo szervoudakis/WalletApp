@@ -1,6 +1,8 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Novibet.Application.Commands.Wallets;
+using Novibet.Application.Querries.Wallets;
 using System.Threading.Tasks;
 
 namespace Novibet.CurrencyApi.Controllers
@@ -16,6 +18,7 @@ namespace Novibet.CurrencyApi.Controllers
             _mediator = mediator;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> CreateWallet([FromBody] CreateWalletCommand command)
         {
@@ -23,11 +26,19 @@ namespace Novibet.CurrencyApi.Controllers
             return CreatedAtAction(nameof(GetWalletBalance), new { walletId }, walletId);
         }
 
-        // Placeholder για το GET Wallet Balance (θα το προσθέσουμε στη συνέχεια)
+        // retrieve specific wallet balance by id
+        [Authorize]
         [HttpGet("{walletId}")]
         public async Task<IActionResult> GetWalletBalance(long walletId)
         {
-            return Ok($"Balance for wallet {walletId} (To be implemented)");
+            var balance = await _mediator.Send(new RetrieveWalletBalanceQuery(walletId));
+            if (balance == null)
+            {
+                return NotFound($"Wallet {walletId} not found.");
+            }
+
+            return Ok(new { walletId = walletId, Balance = balance });
         }
+        
     }
 }

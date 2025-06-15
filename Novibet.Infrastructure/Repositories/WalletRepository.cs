@@ -9,7 +9,7 @@ namespace Novibet.Infrastructure.Repositories
 {
     public class WalletRepository : IWalletRepository
     {
-         private readonly NovibetDbContext _context;
+        private readonly NovibetDbContext _context;
         public WalletRepository(NovibetDbContext context)
         {
             _context = context;
@@ -20,6 +20,10 @@ namespace Novibet.Infrastructure.Repositories
             await _context.SaveChangesAsync();
 
             return wallet.Id;//after saving return id
+        }
+        public async Task<Wallet?> RetrieveWalletByIdAsync(long id)
+        {
+            return await _context.Wallets.FirstOrDefaultAsync(w => w.Id == id);
         }
     }
 }

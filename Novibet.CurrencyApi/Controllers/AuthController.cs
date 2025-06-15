@@ -68,20 +68,27 @@ namespace CleanProductApp.WebApi.Controllers
         public IActionResult Login([FromBody] LoginRequest login)
         {
             try
-            {   //check if credentials is valid
+            {    
+                //check if username or pass is null
+                if (string.IsNullOrWhiteSpace(login?.Username) || string.IsNullOrWhiteSpace(login?.Password))
+                {
+                    return BadRequest("Username and password cannot be empty.");
+                }
+                //check if credentials is valid
                 if (IsValidUserCredentials(login.Username, login.Password))
                 {
                     var tokenString = GenerateJwtToken(login.Username);
-                   
+
                     return Ok(new { Token = tokenString });
                 }
+                //if credentials are wrong return unauthorized message
                 else
                 {
                     return Unauthorized("Invalid credentials");
                 }
             }
             catch (Exception ex)
-            {
+            {   //catch the error and print ex.message for debugging
                 return StatusCode(500, new { error = ex.Message, stackTrace = ex.StackTrace });
             }
         }
@@ -102,7 +109,11 @@ namespace CleanProductApp.WebApi.Controllers
         private string GenerateJwtToken(string username)
         {
             //create a symmetric security token from the JWT secret key defined in appsettings.json
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var secretKey = _configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is missing in configuration.");
+            var issuertext = _configuration["Jwt:Issuer"] ?? throw new InvalidOperationException("Jwt:Issuer is missing.");
+            var audiencetext = _configuration["Jwt:Audience"] ?? throw new InvalidOperationException("JWt:audience is missing");
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             //Create signing credentials using the key and HMAC-SHA256 algorithm
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var claims = new[]
@@ -113,8 +124,8 @@ namespace CleanProductApp.WebApi.Controllers
             
             // Create the JWT with issuer, audience, claims, expiration time, and signing credentials
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
+                issuer: issuertext,
+                audience: audiencetext,
                 claims: claims,
                 expires: DateTime.UtcNow.AddHours(1),
                 signingCredentials: creds);
