@@ -1,13 +1,15 @@
 using Autofac;
 using AutoMapper;
 using Hangfire;
+using MediatR;
 using Hangfire.SqlServer;
 using Novibet.CurrencyApi.Mapping;
 using Novibet.Infrastructure.Repositories;
 using Novibet.Infrastructure.Data;
 using Novibet.CurrencyApi.Jobs;
-using Novibet.CurrencyApi.Services;
 using Novibet.Application.Interfaces;
+using Novibet.Application.Commands.Wallets;
+using Novibet.Infrastructure.DependencyInjection;
 
 namespace Novibet.CurrencyApi.DependencyInjection
 {
@@ -18,7 +20,7 @@ namespace Novibet.CurrencyApi.DependencyInjection
             // 1) register AutoMapper to Autofac
             builder.Register(c => new MapperConfiguration(cfg =>
             {
-               cfg.AddProfile(new CurrencyMappingProfile());
+                cfg.AddProfile(new CurrencyMappingProfile());
             }).CreateMapper()).As<IMapper>().SingleInstance();
 
             //2) register CurrencyMapper in DI Container
@@ -38,14 +40,23 @@ namespace Novibet.CurrencyApi.DependencyInjection
             //6) register updatecurrencyratesjob in DI Container
             builder.RegisterType<UpdateCurrencyRatesJob>().AsSelf().InstancePerLifetimeScope();
 
-            //7) register currencyservice in DI Container
-            builder.RegisterType<CurrencyService>().AsSelf().InstancePerLifetimeScope();
+            // //7) register currencyservice in DI Container
+            // builder.RegisterType<CurrencyService>().As<ICurrencyService>().InstancePerLifetimeScope();
 
-            //8) register CurrencyCacheService in DI Container
-            builder.RegisterType<CurrencyCacheService>().AsSelf().SingleInstance();
+            //7) register CurrencyCacheService in DI Container
+            builder.RegisterType<CurrencyCacheService>().As<ICurrencyCacheService>().SingleInstance();
 
-            //9) register WalletRepository in DI Container
+            //8) register WalletRepository in DI Container
             builder.RegisterType<WalletRepository>().As<IWalletRepository>().InstancePerLifetimeScope();
+
+            //9) register MediatR and CQRS handlers in DI container
+            builder.RegisterType<Mediator>().As<IMediator>().InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(typeof(CreateWalletCommand).Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>))
+            .InstancePerLifetimeScope();
+            //10)
+            builder.RegisterModule<InfrastructureModule>(); //register Infrastructure services
 
         }
     }

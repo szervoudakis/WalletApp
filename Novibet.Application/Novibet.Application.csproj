@@ -7,10 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="12.5.0" />
-     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
      <ProjectReference Include="..\Novibet.Domain\Novibet.Domain.csproj" />
-    <!-- <ProjectReference Include="..\Novibet.Infrastructure\Novibet.Infrastructure.csproj" /> -->
   </ItemGroup>
-
 </Project>

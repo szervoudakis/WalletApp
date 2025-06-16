@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Novibet.EcbGateway.Services;
 using Novibet.Domain.Entities;
 using Novibet.Infrastructure.Repositories;
-using Novibet.CurrencyApi.Services;
+using Novibet.Infrastructure.Services;
 
 namespace Novibet.CurrencyApi.Controllers
 {
@@ -10,9 +10,9 @@ namespace Novibet.CurrencyApi.Controllers
     [Route("api/ecb")]
     public class EcbController : ControllerBase
     {
-        private readonly IEcbService _ecbService;
+        private readonly IEcbGatewayService _ecbService;
         private readonly CurrencyService _currencyService;
-        public EcbController(IEcbService ecbService, CurrencyRepository currencyRepository, CurrencyService currencyService)
+        public EcbController(IEcbGatewayService ecbService, CurrencyRepository currencyRepository, CurrencyService currencyService)
         {
             _ecbService = ecbService;
             _currencyService = currencyService;

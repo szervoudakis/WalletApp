@@ -17,8 +17,8 @@ namespace Novibet.EcbGateway.DependencyInjection
         {
             builder.RegisterInstance(_configuration).As<IConfiguration>().SingleInstance();
             builder.RegisterType<HttpClient>().AsSelf().SingleInstance();
-            builder.RegisterType<EcbService>()
-                   .As<IEcbService>()
+            builder.RegisterType<EcbGatewayService>()
+                   .As<IEcbGatewayService>()
                    .WithParameter("httpClient", new HttpClient())
                    .WithParameter("configuration", _configuration)
                    .SingleInstance();

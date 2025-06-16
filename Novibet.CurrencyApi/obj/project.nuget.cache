@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "VMuSTwYeHl8=",
+  "dgSpecHash": "dAt1RHu8p0M=",
   "success": true,
   "projectFilePath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.CurrencyApi\\Novibet.CurrencyApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steze\\.nuget\\packages\\autofac\\8.3.0\\autofac.8.3.0.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\autofac.extensions.dependencyinjection\\10.0.0\\autofac.extensions.dependencyinjection.10.0.0.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\steze\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\steze\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
@@ -101,6 +102,16 @@
     "C:\\Users\\steze\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 14.0.0 was resolved.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
     {
       "code": "NU1608",
       "level": "Warning",

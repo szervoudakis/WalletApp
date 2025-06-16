@@ -9,10 +9,11 @@ using EFCore.BulkExtensions;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Data.SqlClient;
+using Novibet.Application.Interfaces;
 
 namespace Novibet.Infrastructure.Repositories
 {
-    public class CurrencyRepository
+    public class CurrencyRepository : ICurrencyRepository
     {
         private readonly NovibetDbContext _context;
         private readonly IConfiguration _configuration;

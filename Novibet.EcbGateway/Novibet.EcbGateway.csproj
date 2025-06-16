@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Novibet.Infrastructure\Novibet.Infrastructure.csproj" />
+    <!-- <ProjectReference Include="..\Novibet.Infrastructure\Novibet.Infrastructure.csproj" /> -->
   </ItemGroup>
 
 </Project>

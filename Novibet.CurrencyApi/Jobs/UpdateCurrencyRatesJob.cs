@@ -3,26 +3,27 @@ using System.Threading.Tasks;
 using Novibet.Infrastructure.Repositories;
 using Novibet.Domain.Entities;
 using Novibet.EcbGateway.Services;
-using Novibet.CurrencyApi.Services;
+using Novibet.Infrastructure.Services;
+using Novibet.Application.Interfaces;
 
 namespace Novibet.CurrencyApi.Jobs
 {
     public class UpdateCurrencyRatesJob
     {
-        private readonly IEcbService _ecbService;
-        private readonly CurrencyRepository _currencyRepository;
-        private readonly CurrencyService _currencyService;
+        private readonly IEcbGatewayService _ecbgatewayService;
+        private readonly ICurrencyRepository _currencyRepository;
+        private readonly ICurrencyService _currencyService;
 
-        public UpdateCurrencyRatesJob(IEcbService ecbService, CurrencyRepository currencyRepository, CurrencyService currencyService)
+        public UpdateCurrencyRatesJob(IEcbGatewayService ecbgatewayService, ICurrencyRepository currencyRepository, ICurrencyService currencyService)
         {
-            _ecbService = ecbService;
+            _ecbgatewayService = ecbgatewayService;
             _currencyRepository = currencyRepository;
             _currencyService = currencyService;
         }
 
         public async Task Execute()
         {
-            //var rates = await _ecbService.GetLatestRatesAsync();
+            //var rates = await _ecbgatewayService.GetLatestRatesAsync();
             await _currencyService.UpdateCurrencyRatesAsync(); //call currencyservice for update db
         }
     }

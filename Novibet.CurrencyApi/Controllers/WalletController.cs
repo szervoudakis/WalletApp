@@ -29,9 +29,9 @@ namespace Novibet.CurrencyApi.Controllers
         // retrieve specific wallet balance by id
         [Authorize]
         [HttpGet("{walletId}")]
-        public async Task<IActionResult> GetWalletBalance(long walletId)
+        public async Task<IActionResult> GetWalletBalance(long walletId, [FromQuery] string? currency = null)
         {
-            var balance = await _mediator.Send(new RetrieveWalletBalanceQuery(walletId));
+            var balance = await _mediator.Send(new RetrieveWalletBalanceQuery(walletId,currency));
             if (balance == null)
             {
                 return NotFound($"Wallet {walletId} not found.");

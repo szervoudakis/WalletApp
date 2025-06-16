@@ -25,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Novibet.EcbGateway\Novibet.EcbGateway.csproj" />
     <ProjectReference Include="..\Novibet.Infrastructure\Novibet.Infrastructure.csproj" />
+     <ProjectReference Include="..\Novibet.Application\Novibet.Application.csproj" />
   </ItemGroup>
 
 </Project>

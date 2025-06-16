@@ -47,9 +47,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Autofac.Extensions.DependencyInjection": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[12.0.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -98,6 +98,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Application\\Novibet.Application.csproj": {
+                "projectPath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Application\\Novibet.Application.csproj"
+              },
               "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.EcbGateway\\Novibet.EcbGateway.csproj": {
                 "projectPath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.EcbGateway\\Novibet.EcbGateway.csproj"
               },
@@ -277,11 +280,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Infrastructure\\Novibet.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Infrastructure\\Novibet.Infrastructure.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -359,6 +358,9 @@
               },
               "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Domain\\Novibet.Domain.csproj": {
                 "projectPath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.Domain\\Novibet.Domain.csproj"
+              },
+              "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.EcbGateway\\Novibet.EcbGateway.csproj": {
+                "projectPath": "C:\\Users\\steze\\Desktop\\projects-c#\\Novibet\\Novibet.EcbGateway\\Novibet.EcbGateway.csproj"
               }
             }
           }
@@ -378,6 +380,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
@@ -417,6 +427,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.6, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.41, )"
             }
           },
           "imports": [
