@@ -23,7 +23,7 @@ namespace Novibet.Application.Handlers.Wallets  {
       var wallet = await _walletRepository.RetrieveWalletByIdAsync(request.Id);
       if (wallet == null)
       {
-        return null;
+         throw new KeyNotFoundException($"Wallet {request.Id} not found.");
       }
       decimal convertedBalance = wallet.Balance;
       string targetCur = request.Currency ?? wallet.Currency;

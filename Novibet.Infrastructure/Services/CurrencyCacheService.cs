@@ -64,4 +64,16 @@ public class CurrencyCacheService : ICurrencyCacheService
         //return in dictionary the cached data
         return result;
     }
+
+    public async Task<decimal?> GetCachedRateAsync(string fromCurrency, string toCurrency)
+    {
+        var rates = await GetCachedCurrencyRatesAsync();
+        var key = $"{fromCurrency}-{toCurrency}";
+        if (rates.TryGetValue(key, out var rate))
+        {
+            return rate;
+        }
+        return null;
+    }
+
 }

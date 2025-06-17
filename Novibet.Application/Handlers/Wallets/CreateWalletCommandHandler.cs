@@ -15,6 +15,7 @@ namespace Novibet.Application.Handlers.Wallets
         {
             _walletRepository = walletRepository;
         }
+        
         public async Task<long> Handle(CreateWalletCommand request, CancellationToken cancellationToken)
         {
             var wallet = new Wallet(0, request.Currency); // create Wallet

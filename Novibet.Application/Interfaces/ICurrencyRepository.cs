@@ -6,5 +6,9 @@ namespace Novibet.Application.Interfaces
     {
         Task SaveCurrencyRatesAsync(List<Currency> currencies);
         Task<List<Currency>> GetLatestRatesAsync();
+
+        Task UpdateAsync(Currency currency);
+
+        Task<Dictionary<string,decimal>> RetrieveCurrencyRateAsync(string currency);
     }
 }

@@ -76,15 +76,24 @@ namespace Novibet.Infrastructure.Services
         {
             var rates = await _currencyCacheService.GetCachedCurrencyRatesAsync();  //get rates from cache
             
-            if (rates == null || !rates.ContainsKey(fromCurrency) || !rates.ContainsKey(toCurrency))
+            if (rates == null )
             {
                 throw new Exception("Currency rate not available for conversion");
+            }
+            if (!rates.ContainsKey("EUR"))
+            {
+                rates["EUR"] = 1.0m;
             }
 
             //todo retrieve from db if cache is empty
 
             decimal fromRate = rates[fromCurrency];
             decimal toRate = rates[toCurrency];
+
+            if (!rates.ContainsKey(fromCurrency) || !rates.ContainsKey(toCurrency))
+            {
+                throw new Exception("Currency rate not available for conversion");
+            }
 
             //conversion
             decimal baseAmount = amount / fromRate;

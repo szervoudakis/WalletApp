@@ -2,7 +2,9 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Novibet.Application.Commands.Wallets;
+using Novibet.Application.DTOs;
 using Novibet.Application.Querries.Wallets;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Novibet.CurrencyApi.Controllers
@@ -31,14 +33,25 @@ namespace Novibet.CurrencyApi.Controllers
         [HttpGet("{walletId}")]
         public async Task<IActionResult> GetWalletBalance(long walletId, [FromQuery] string? currency = null)
         {
-            var balance = await _mediator.Send(new RetrieveWalletBalanceQuery(walletId,currency));
-            if (balance == null)
-            {
-                return NotFound($"Wallet {walletId} not found.");
-            }
-
+            var balance = await _mediator.Send(new RetrieveWalletBalanceQuery(walletId, currency));
             return Ok(new { walletId = walletId, Balance = balance });
         }
+        [Authorize]
+        [HttpPost("{walletId}/adjustbalance")]
+        public async Task<ActionResult<WalletBalanceDto>> AdjustBalance([FromRoute] long walletId, [FromQuery] decimal amount, [FromQuery] string currency, [FromQuery] string strategy)
+        {
+            var command = new AdjustWalletBalanceCommand
+            {
+                WalletId = walletId,
+                Amount = amount,
+                Currency = currency,
+                Strategy = strategy
+            };
+
+            var result = await _mediator.Send(command);
+            return Ok(result);
+            
+        } 
         
     }
 }

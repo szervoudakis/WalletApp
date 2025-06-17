@@ -25,5 +25,11 @@ namespace Novibet.Infrastructure.Repositories
         {
             return await _context.Wallets.FirstOrDefaultAsync(w => w.Id == id);
         }
+
+        public async Task UpdateAsync(Wallet wallet)
+        {
+            _context.Wallets.Update(wallet);
+            await _context.SaveChangesAsync();
+        }
     }
 }

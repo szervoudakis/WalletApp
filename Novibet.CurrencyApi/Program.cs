@@ -19,6 +19,7 @@ using StackExchange.Redis;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Novibet.CurrencyApi.Middleware;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -66,6 +67,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.UseHangfireDashboard();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 // RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
 //     "update-currency-rates",
 //     job => job.Execute(),
