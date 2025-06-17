@@ -63,11 +63,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 var app = builder.Build();
+// app.UseIpRateLimiting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.UseHangfireDashboard();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 // RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
 //     "update-currency-rates",
 //     job => job.Execute(),
