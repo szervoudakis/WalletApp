@@ -1,0 +1,21 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "EcbGateway": {
+    "BaseUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+  },
+  "ConnectionStrings": {
+    "NovibetDb": "Server=YOUR_SERVER;Database=NovibetDb;Trusted_Connection=True;Encrypt=False;",
+    "Redis": "localhost:6379,abortConnect=false"
+  },
+  "Jwt": {
+        "Key": "your_key",
+        "Issuer": "NovibetApp",
+        "Audience": "NovibetAppClient"
+    }
+}
