@@ -69,10 +69,10 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseHangfireDashboard();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-
-// RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
-//     "update-currency-rates",
-//     job => job.Execute(),
-//     Cron.Minutely);
+//todo special class for scheduler
+RecurringJob.AddOrUpdate<UpdateCurrencyRatesJob>(
+    "update-currency-rates",
+    job => job.Execute(),
+    Cron.Minutely);
 
 app.Run();
