@@ -4,5 +4,7 @@ namespace Novibet.Application.Interfaces
     {
         Task<Dictionary<string, decimal>> GetCachedCurrencyRatesAsync();
         Task SetCurrencyRatesAsync(Dictionary<string, decimal> rates);
+
+         Task<string> PingRedisAsync();
     }
 }

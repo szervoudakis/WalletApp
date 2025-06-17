@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Novibet.EcbGateway.Services;
-
+using Novibet.Application.Interfaces;
 
 namespace Novibet.CurrencyApi.Controllers
 {
@@ -8,9 +8,9 @@ namespace Novibet.CurrencyApi.Controllers
     [ApiController]
     public class RedisController : ControllerBase
     {
-        private readonly CurrencyCacheService _cacheService;
+        private readonly ICurrencyCacheService _cacheService;
 
-        public RedisController(CurrencyCacheService cacheService)
+        public RedisController(ICurrencyCacheService cacheService)
         {
             _cacheService = cacheService;
         }
