@@ -12,7 +12,7 @@ namespace Novibet.Application.Commands.Wallets
         public decimal Amount { get; init; }
         public string Currency { get; init; } = default!;
         public string Strategy { get; init; } = default!;
-         public AdjustWalletBalanceCommand() {}  //required for objects initializer (walletcontroler)
+        public AdjustWalletBalanceCommand() {}  //required for objects initializer (walletcontroler)
         public AdjustWalletBalanceCommand(long walletId, decimal amount, string currency, string strategy)
         {
             WalletId = walletId;

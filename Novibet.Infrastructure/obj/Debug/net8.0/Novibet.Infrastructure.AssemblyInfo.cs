@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Novibet.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c39c5f59478562814c3715e633b196b0c79d0da3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+517f7f5d59c27331dde5eb83f29bf114511b5eca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Novibet.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Novibet.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

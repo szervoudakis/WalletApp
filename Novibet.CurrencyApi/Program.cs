@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Novibet.CurrencyApi.Middleware;
+using Novibet.Infrastructure.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +41,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new EcbGatewayModule(builder.Configuration));  // using ecbgatewaymodule for injection
     containerBuilder.RegisterModule(new CurrencyApiModule());  //using currencyapimodule for injection
+    containerBuilder.RegisterModule(new InfrastructureModule());
 });
 
 builder.Services.AddControllers();//add controllers

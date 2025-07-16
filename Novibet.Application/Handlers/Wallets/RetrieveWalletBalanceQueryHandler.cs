@@ -34,11 +34,12 @@ namespace Novibet.Application.Handlers.Wallets  {
         // decimal amount, string fromCurrency, string toCurrency
         convertedBalance = await _currencyService.ConvertAsync(wallet.Balance,wallet.Currency, targetCur);
       }
+      
       return new WalletBalanceDto
       {
-          WalletId = request.Id,
-          Balance = convertedBalance,
-          Currency = targetCur
+        WalletId = request.Id,
+        Balance = convertedBalance,
+        Currency = targetCur
       };
     }    
   }    

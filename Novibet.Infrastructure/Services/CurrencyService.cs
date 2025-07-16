@@ -86,7 +86,6 @@ namespace Novibet.Infrastructure.Services
             }
 
             //todo retrieve from db if cache is empty
-
             decimal fromRate = rates[fromCurrency];
             decimal toRate = rates[toCurrency];
 

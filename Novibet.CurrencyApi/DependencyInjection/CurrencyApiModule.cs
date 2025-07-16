@@ -52,8 +52,9 @@ namespace Novibet.CurrencyApi.DependencyInjection
             builder.RegisterAssemblyTypes(typeof(CreateWalletCommand).Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>))
             .InstancePerLifetimeScope();
-            //10)
-            builder.RegisterModule<InfrastructureModule>(); //register Infrastructure services
+            
+            // //10)
+            // builder.RegisterModule<InfrastructureModule>(); //register Infrastructure services
 
         }
     }

@@ -28,10 +28,11 @@ namespace Novibet.Domain.Entities
             if (Balance < amount) throw new InvalidOperationException("Insufficient funds.");
             Balance -= amount;
         }
+        
         public void ForceSubtractFunds(decimal amount)
         {
-           if (amount <= 0) throw new ArgumentException("Amount must be positive.");
-           Balance -= amount; 
+            if (amount <= 0) throw new ArgumentException("Amount must be positive.");
+            Balance -= amount;
         }
     }
 }
