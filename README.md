@@ -1,6 +1,6 @@
 # WalletApp
 
-A sample .NET 5+ application demonstrating clean architecture, integration with the European Central Bank (ECB) for currency exchange rates, and wallet management with balance adjustments.
+A sample .NET 8+ application demonstrating clean architecture, integration with the European Central Bank (ECB) for currency exchange rates, and wallet management with balance adjustments.
 
 ## Features
 - **ECB Gateway**: Fetches and parses daily exchange rates from the European Central Bank.
