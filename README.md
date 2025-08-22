@@ -18,12 +18,12 @@ A sample .NET 5+ application demonstrating clean architecture, integration with 
 - **Unit Tests** with xUnit
 
 ## Tech Stack
-- .NET 5+
+- .NET 8+
 - Entity Framework Core
-- Quartz.NET (for scheduled jobs)
+- Hangfire (for scheduled jobs)
 - Autofac (for dependency injection)
 - xUnit (for testing)
-
+- Redis (for caching)
 ## Getting Started
 1. Clone the repository
 2. Set up database connection in `appsettings.json`
