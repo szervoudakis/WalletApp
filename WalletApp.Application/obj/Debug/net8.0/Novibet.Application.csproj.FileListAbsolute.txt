@@ -1,0 +1,16 @@
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\bin\Debug\net8.0\WalletApp.Application.deps.json
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\bin\Debug\net8.0\WalletApp.Application.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\bin\Debug\net8.0\WalletApp.Application.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\bin\Debug\net8.0\WalletApp.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\bin\Debug\net8.0\WalletApp.Domain.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.csproj.AssemblyReference.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.AssemblyInfoInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.AssemblyInfo.cs
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.sourcelink.json
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp..A332B148.Up2Date
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\refint\WalletApp.Application.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\WalletApp.Application.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Application\obj\Debug\net8.0\ref\WalletApp.Application.dll

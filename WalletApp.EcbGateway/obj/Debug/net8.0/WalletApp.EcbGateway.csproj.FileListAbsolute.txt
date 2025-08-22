@@ -1,0 +1,13 @@
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\bin\Debug\net8.0\WalletApp.EcbGateway.deps.json
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\bin\Debug\net8.0\WalletApp.EcbGateway.dll
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\bin\Debug\net8.0\WalletApp.EcbGateway.pdb
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.csproj.AssemblyReference.cache
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.AssemblyInfoInputs.cache
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.AssemblyInfo.cs
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.sourcelink.json
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.dll
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\refint\WalletApp.EcbGateway.dll
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\WalletApp.EcbGateway.pdb
+C:\Users\steze\Desktop\projects-c#\WalletApp\WalletApp.EcbGateway\obj\Debug\net8.0\ref\WalletApp.EcbGateway.dll

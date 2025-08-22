@@ -1,0 +1,12 @@
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\bin\Debug\net8.0\WalletApp.Domain.deps.json
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\bin\Debug\net8.0\WalletApp.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\bin\Debug\net8.0\WalletApp.Domain.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.AssemblyInfoInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.AssemblyInfo.cs
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.sourcelink.json
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\refint\WalletApp.Domain.dll
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\WalletApp.Domain.pdb
+C:\Users\steze\Desktop\projects-c#\Novibet\WalletApp.Domain\obj\Debug\net8.0\ref\WalletApp.Domain.dll
