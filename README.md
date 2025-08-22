@@ -10,8 +10,8 @@ A sample .NET 8+ application demonstrating clean architecture, integration with 
   - Retrieve balances with currency conversion
   - Adjust balances using different strategies (Add, Subtract, Force Subtract)
 - **Design Patterns**:
-  - Strategy Pattern for balance adjustments
-  - Factory/Abstractions for extensibility
+  - Dependency Injection
+  - CQRS pattern separation operations 
 - **Extras (optional)**:
   - Caching of latest exchange rates
   - Rate limiting middleware
